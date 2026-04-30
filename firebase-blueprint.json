@@ -1,0 +1,47 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A tea drink item in the menu",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "priceM": { "type": "number" },
+        "priceL": { "type": "number" },
+        "description": { "type": "string" },
+        "isStar": { "type": "boolean" },
+        "isHeart": { "type": "boolean" },
+        "image": { "type": "string" }
+      },
+      "required": ["name", "category", "priceL"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "A customer's tea order",
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "description": "List of ordered items with size and quantity"
+        },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "completed", "cancelled"] },
+        "customerName": { "type": "string" },
+        "phone": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["items", "totalAmount", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/products": {
+      "schema": "Product",
+      "description": "Collection of tea products"
+    },
+    "/orders": {
+      "schema": "Order",
+      "description": "Collection of customer orders"
+    }
+  }
+}
