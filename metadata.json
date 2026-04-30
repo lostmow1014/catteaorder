@@ -1,0 +1,6 @@
+{
+  "name": "TeaOrder - 專業茶飲點單系統",
+  "description": "一個具備前台點餐與後台訂單管理功能的專業茶飲點單系統，整合 Firebase 即時資料庫。",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
